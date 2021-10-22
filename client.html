@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Caisse automatique</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="client.css">
+    <link rel="stylesheet" href="payer.php">
+    <script src="payer.js" defer></script>
+</head>
+
+<body>
+
+    <!--Entête-->
+    <div class="jumbotron text-center" id=entete>
+        <h1>Bienvenue chez Tourelle-Shop</h1>
+    </div>
+    <div id="timer"></div>
+    <script>
+        (function horloge(){
+            var tt = new Date().toLocaleTimeString();
+            document.getElementById('timer').innerHTML = tt;
+            setTimeout(horloge, 1000);
+        })()
+    </script>
+
+    <!--Partie article avec un tableau, pour afficher les articles-->
+    <h3>Veuillez scanner vos articles</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2>Articles</h2>
+                <table class="table table-info table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nom du produit</th>
+                            <th>Prix</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                                                     
+                        </tr>
+                    </tbody>
+                </table>
+                <!--Bouton de paiement-->
+                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Paiement</button>
+                <div id="id01" class="modal">
+                    <form class="modal-content animate" action="db.classe.php" method="post">
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        </div>
+                        <div class="container">
+                            <label for="uname"><b>Numero carte</b></label>
+                            <input type="text" placeholder="Enter le numéro de carte" name="uname" required>
+                            <label for="psw"><b>Mot de passe</b></label>
+                            <input type="password" placeholder="Enter le mot de passe" name="psw" required>
+                            <button type="submit">Confirmer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!--Partie Hôtesse incluant la barre d'ecriture-->
+            <div class="col-sm-3">
+                <h3>Hôtesse</h3>
+                <div class="form-group">
+                    <label for="code">Code article:</label>
+                    <input type="text" class="form-control form-control-sm">
+                </div>
+            </div>
+        </div>
+
+</body>
+</html>
