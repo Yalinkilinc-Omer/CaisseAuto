@@ -1,0 +1,45 @@
+#clients {
+    font-family: Arial, Helvetica, sans-serif; /*police de texte*/
+    border-collapse: collapse; /* les bordures sont partage, separate = separee*/
+    width: 100px;
+
+}
+#clients td, #clients th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    
+}
+
+#clients tr:nth-child(even){
+    background-color:#ddd;
+    
+}
+
+#clients tr:hover{
+    background-color:gray;
+    
+}
+
+#clients th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: gray;
+    color: white;
+
+}
+
+h1 {
+    background-color: red;
+    color:white;
+    width: 450px;
+
+}
+
+h2 {
+    background-color: grey;
+    color:white;
+    width: 120px;
+    
+}
+
